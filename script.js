@@ -1,7 +1,9 @@
 $(function() {
   $(".accordion-header").click(function() {
     $(this).next().slideToggle()
-  })
+    $(".accordion-content").not($(this).next()).slideUp()
+});
+
 
   $(".todos").find("button").click(function() {
     $.ajax({
